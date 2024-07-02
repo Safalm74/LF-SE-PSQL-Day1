@@ -22,6 +22,7 @@ create table if not exists
 			references sale_Schema.Products(product_id)
 );
 
+--CRUD Operations:
 --inserting data on products
 insert into 
 	sale_schema.products 
@@ -57,13 +58,20 @@ insert into
 	 	('C',7,32,'2017-03-14'),
 	 	('C',4,112,'2017-03-14'),
 	 	('C',4,101,'2017-03-14');
---deleting
-delete  from sale_schema.orders o
-	where o.product_id=6;
+	 
+--reading data
+select * from sale_schema.orders o ;
+select * from sale_schema.products p ;
+
 --updating
 update sale_schema.products 
 	set price=55000
 	where product_name='gtx 1050ti';
+
+--deleting
+delete  from sale_schema.orders o
+	where o.product_id=6;
+
 --Question: Calculate the total quantity ordered for each product category in the orders table.
 select  
 	p.category as category ,
